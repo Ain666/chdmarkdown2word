@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to Word Converter - Chuyển đổi Markdown sang Word</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font awesome cho icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-file-word"></i> Markdown to Word Converter</h1>
+                <p class="subtitle">Chuyển đổi Markdown (có công thức LaTeX) sang file Word DOCX chuyên nghiệp</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Instructions -->
+            <div class="instructions">
+                <h2><i class="fas fa-info-circle"></i> Hướng dẫn sử dụng</h2>
+                <ul>
+                    <li><strong>Markdown:</strong> Viết nội dung theo cú pháp Markdown thông thường</li>
+                    <li><strong>Công thức toán:</strong> Sử dụng <code>$...$</code> cho công thức inline, <code>$$...$$</code> cho công thức block</li>
+                    <li><strong>Ví dụ:</strong> <code>$x^2 + y^2 = z^2$</code> hoặc <code>$$\frac{a}{b} = \int_0^1 x dx$$</code></li>
+                    <li><strong>Tải file:</strong> Click nút "Tải file" để upload file .md hoặc .txt</li>
+                </ul>
+            </div>
+
+            <!-- Upload Section -->
+            <div class="upload-section">
+                <label for="fileInput" class="upload-btn">
+                    <i class="fas fa-upload"></i> Tải file Markdown (.md, .txt)
+                </label>
+                <input type="file" id="fileInput" accept=".md,.txt,.markdown" style="display: none;">
+                <span id="fileName" class="file-name"></span>
+            </div>
+
+            <!-- Editor Section -->
+            <div class="editor-section">
+                <div class="editor-header">
+                    <h3><i class="fas fa-edit"></i> Nhập hoặc dán nội dung Markdown</h3>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        <i class="fas fa-trash"></i> Xóa nội dung
+                    </button>
+                </div>
+                <textarea id="markdownInput" placeholder="# Tiêu đề chính
+
+## Tiêu đề phụ
+
+Đây là đoạn văn bản **in đậm** và *in nghiêng*.
+
+### Công thức toán học
+
+Công thức inline: $x^2 + y^2 = z^2$
+
+Công thức block:
+
+$$
+\int_0^1 x^2 dx = \frac{1}{3}
+$$
+
+$$
+f(x) = \frac{a + b}{c - d}
+$$
+
+### Danh sách
+
+1. Mục 1
+2. Mục 2
+3. Mục 3
+
+- Item A
+- Item B
+- Item C
+
+### Bảng
+
+| Cột 1 | Cột 2 | Cột 3 |
+|-------|-------|-------|
+| A     | B     | C     |
+| 1     | 2     | 3     |
+
+### Code
+
+```python
+def hello():
+    print('Hello World!')
+```
+
+> Đây là một đoạn trích dẫn
+"></textarea>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="preview-section">
+                <div class="preview-header">
+                    <h3><i class="fas fa-eye"></i> Xem trước</h3>
+                </div>
+                <div id="preview" class="preview-content">
+                    <p class="preview-placeholder">Nội dung xem trước sẽ hiển thị ở đây...</p>
+                </div>
+            </div>
+
+            <!-- Convert Button -->
+            <div class="convert-section">
+                <button id="convertBtn" class="btn btn-primary btn-large">
+                    <i class="fas fa-file-download"></i> Chuyển đổi và Tải xuống DOCX
+                </button>
+                <div id="loading" class="loading" style="display: none;">
+                    <i class="fas fa-spinner fa-spin"></i> Đang xử lý, vui lòng đợi...
+                </div>
+                <div id="errorMsg" class="error-msg" style="display: none;"></div>
+                <div id="successMsg" class="success-msg" style="display: none;"></div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Developed by CHD AI | <a href="https://github.com/your-username/markdown-to-word-converter" target="_blank">
+                <i class="fab fa-github"></i> GitHub
+            </a></p>
+        </footer>
+    </div>
+
+    <!-- Include marked.js for Markdown preview -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Include KaTeX for math rendering in preview -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
