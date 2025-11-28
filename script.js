@@ -1,6 +1,6 @@
 // ===== CONFIGURATION =====
 // TODO: Thay đổi URL này sau khi deploy backend lên PythonAnywhere
-const BACKEND_API_URL = 'https://YOUR-USERNAME.pythonanywhere.com/convert';
+const BACKEND_API_URL = 'https://chanduc.pythonanywhere.com/convert';
 
 // ===== DOM ELEMENTS =====
 const fileInput = document.getElementById('fileInput');
